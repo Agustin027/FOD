@@ -27,27 +27,12 @@ Var
 Begin
   crearArchivo(archivoInt);
   leer(num);
-  While (num <> 0) Do
+  While (num <> 30000) Do
     Begin
       write(archivoInt, num);
       leer(num);
     End;
   close(archivoInt);
-
-
-
-
-
-
-{ Esto es para leer el archivo y mostrarlo en pantalla
-  reset(archivoInt;
-  While Not eof(archivoInt Do
-    Begin
-      read(archivoInt num);
-      writeln(num);
-    End;
-  close(archivoInt);
-  }
   writeln('Fin del programa');
   readln;
 End.

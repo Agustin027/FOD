@@ -180,30 +180,31 @@ Procedure modificarEdad(Var archivoEmpleado:archivo);
 
 Var 
   e: empleado;
-  ok,ok2: boolean;
+  ok: boolean;
+  buscar: string;
 Begin
   reset(archivoEmpleado);
-  ok2 := true;
-  While Not eof(archivoEmpleado) And (ok2) Do
+  writeln('Ingrese el apellido o nombre a buscar');
+  readln(buscar);
+  ok := false;
+  While Not eof(archivoEmpleado) And (Not ok) Do
     Begin
       read(archivoEmpleado, e);
-      mostrarEmpleado(e);
-      writeln('Modificar la edad?');
-      ok := sino();
-
-      If ok Then
+      If (e.apellido=buscar) Or (e.nombre=buscar) Then
         Begin
           writeln('Ingrese la nueva edad');
           readln(e.edad);
           seek(archivoEmpleado, filepos(archivoEmpleado)-1);
           write(archivoEmpleado, e);
-        End
-      Else
-        writeln('No se modifico la edad', #13#10,
-                '---------------------------------');
-      writeln('quiere seguir modificando edades?');
-      ok2 := sino();
+          ok := true;
+        End;
     End;
+  If Not ok Then
+    writeln('No se encontro el empleado', #13#10,
+            '---------------------------------')
+  Else
+    writeln('Edad modificada')
+
 End;
 
 Procedure exportarATexto(Var archivoEmpleado:archivo; Var txtEmpleados: Text);

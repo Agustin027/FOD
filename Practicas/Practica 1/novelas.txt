@@ -1,0 +1,20 @@
+001 15.99 Ficción
+El túnel
+002 12.50 Drama
+Martín Fierro
+003 20.75 Romance
+La tejedora de sueños
+004 18.00 Misterio
+El secreto de sus ojos
+005 22.99 Aventura
+La vuelta al mundo en 80 días
+006 14.75 Ciencia ficción
+1984
+007 16.50 Histórico
+Los pilares de la Tierra
+008 19.25 Suspense
+El código Da Vinci
+009 21.99 Terror
+El exorcista
+010 10.00 Humor
+Cien años de soledad

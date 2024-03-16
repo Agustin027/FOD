@@ -1,0 +1,23 @@
+1
+G82
+El Moto G82 tiene pantalla AMOLED 6.6", procesador Snapdragon 695, cámara triple 50 MP, batería 5000 mAh.
+Motorola
+200 
+5 
+3
+
+2
+Iphone 15
+Presenta pantalla OLED de 6,1 pulgadas, camara dual de 48 MP, resistencia al agua y procesador A16 Bionic
+Apple
+800 
+5 
+2
+
+3
+S24
+Pantalla AMOLED 6.2", Snapdragon 8 Gen 3, cámara 50 MP, batería 5000 mAh, resistencia al agua IP68
+Samsung
+799 
+2 
+800
