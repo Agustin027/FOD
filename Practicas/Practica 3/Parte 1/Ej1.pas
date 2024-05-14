@@ -1,5 +1,5 @@
 
-Program Ej4;
+Program Ej1;
 
 Type 
   empleado = Record
@@ -261,6 +261,42 @@ Begin
 End;
 
 
+Procedure realizarBaja (Var arc_log: archivo);
+
+Var 
+  e: empleado;
+  ok: boolean;
+  f: empleado;
+  nro: integer;
+Begin
+  writeln('Ingrese el número de empleado a eliminar:');
+  readln(nro);
+  ok := false;
+  seek(arc_log, FileSize(arc_log) - 1);
+  read(arc_log, f);
+  seek(arc_log, 0);
+
+  While (Not eof(arc_log)) And (Not ok) Do
+    Begin
+      read(arc_log, e);
+      If (e.nro = nro) Then
+        Begin
+          ok := true;
+          seek(arc_log, filepos(arc_log) - 1);
+          write(arc_log, f);
+          seek(arc_log, FileSize(arc_log) - 1);
+          truncate(arc_log);
+        End;
+    End;
+  If (Not ok) Then
+    writeln('NO SE ENCONTRÓ EL NUMERO DE EMPLEADO')
+  Else
+    writeln('SE ELIMINÓ CON ÉXITO');
+  writeln('');
+End;
+
+
+
 Procedure menu2(Var archivoEmpleado: archivo; Var txtEmpleados:Text ; Var
                 txtSinDni: Text
 );
@@ -277,6 +313,7 @@ Begin
   writeln('5: Modificar edad');
   writeln('6: Exportar a texto todos los empleados');
   writeln('7: Exportar a texto empleados sin DNI');
+  writeln('8: Realizar baja');
 
   writeln('--------------------------------------------------------');
   writeln('Ingrese la opcion deseada: ');
@@ -290,6 +327,7 @@ Begin
     '5': modificarEdad(archivoEmpleado);
     '6': exportarATexto(archivoEmpleado,txtEmpleados);
     '7': exportarSinDni(archivoEmpleado,txtSinDni);
+    '8': realizarBaja(archivoEmpleado);
     Else
       writeln('Opcion incorrecta');
   End;
